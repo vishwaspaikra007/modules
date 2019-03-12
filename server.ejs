@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <button onclick="clickiter()" >click to see magic</button>
+        <div id="rep"></div>
+        <script>
+            function clickiter() {
+                var repeatH1 = document.getElementById('rep');
+                for(i=0;i<5;i++) {
+                    repeatH1.innerHTML += "<h3>Loop of 5 iteration<h3>";
+                }
+            }
+        </script>
+    </body>
+</html>
