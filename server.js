@@ -1,7 +1,7 @@
 var server = require('http');
 var filesystem = require('fs');
 function engine(req,  res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
+    // res.writeHead(200, {'Content-Type': 'text/html'});
     filesystem.readFile('./server.ejs',null,(err, data)=> {
         if(err) {
             res.writeHead(404);
