@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain 1</title>
+    <script>
+        function completed() {
+            alert("done")
+            document.querySelector('h1').innerHTML = "done"
+        }
+    </script>
+</head>
+<body onload="completed()">
+    <h1>Please wait ...</h1>
+    <p>Domain 1 requesting domainn 2 to set a cookie</p>
+    <img src="http://localhost:3100/setCookie" alt="">
+</body>
+</html>
