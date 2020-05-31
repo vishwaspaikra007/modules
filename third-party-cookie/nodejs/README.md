@@ -7,3 +7,7 @@
 - open inspect (ctrl + shift + i) -> application -> storage -> cookies -> current site url
 - a cookie will be present with name 'cookieBy' and value 'cookie-set-on-domain-1-on-port-3200'
 - enjoy cross-site cookie ;)
+
+### preview
+
+# ![chrome view of cookie](./eg.png)
