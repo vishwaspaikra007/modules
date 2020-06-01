@@ -7,6 +7,7 @@ const corsOptions = {
     origin: 'http://localhost:3200', // required to access cookie from cross-origin
     credentials: true
 }
+app.use(express.json())
 app.use(cors(corsOptions))
 app.use(cookieParser())
 
@@ -17,6 +18,10 @@ app.use('/setCookie', (req, res) => {
 
 app.use('/showCookie', (req, res) => {
     res.send(req.cookies)
+})
+
+app.post('/setCookieWithSomeValue', (req, res) => {
+    res.cookie("cookieSetByUser", req.body.value).send()
 })
 
 app.listen(3100, ()=> {

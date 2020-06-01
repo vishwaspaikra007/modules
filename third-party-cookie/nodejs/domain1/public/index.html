@@ -14,14 +14,26 @@
 <body onload="completed()">
     <h1>Please wait ...</h1>
     <p>Domain 1 requesting domainn 2 to set a cookie</p>
-    <img src="http://localhost:3100/setCookie" alt="">
+    <!-- one way to set cross origin cookie -->
+    <img src="http://localhost:3100/setCookie" alt=""> 
     <hr>
     <button onclick="showCookie()">Show cookie</button>
+    <hr>
+    value for cookie <input type="text" name="cookieValue" id="cookieValue" value="value set By User"/>
+    <button onclick="setCookieWithSomeValue()">set Cookie With Some Value</button>
     <script>
         function showCookie() {
             fetch('http://localhost:3100/showCookie',{
-                credentials: 'include' // required to send cookie from the broser to server
+                credentials: 'include' // required to send cookie to the broser from cross-origin servers
             }).then(response => response.json())
+            .then(data => console.log(data))
+        }
+        function setCookieWithSomeValue(value) {
+            const cookievalue = document.querySelector('#cookieValue').value
+            fetch('http://localhost:3100/setCookieWithSomeValue', {
+                credentials: 'include',
+                method: 'POST'
+            },{value: cookievalue}).then(response => response.json())
             .then(data => console.log(data))
         }
     </script>
