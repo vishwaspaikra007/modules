@@ -15,5 +15,15 @@
     <h1>Please wait ...</h1>
     <p>Domain 1 requesting domainn 2 to set a cookie</p>
     <img src="http://localhost:3100/setCookie" alt="">
+    <hr>
+    <button onclick="showCookie()">Show cookie</button>
+    <script>
+        function showCookie() {
+            fetch('http://localhost:3100/showCookie',{
+                credentials: 'include' // required to send cookie from the broser to server
+            }).then(response => response.json())
+            .then(data => console.log(data))
+        }
+    </script>
 </body>
 </html>
